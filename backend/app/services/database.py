@@ -5,7 +5,7 @@ Acessa ao Banco de dados TinyDB
 
 """
 
-import tinydb
+from tinydb import Query, TinyDB
 
 from app.config import settings 
 
@@ -13,7 +13,7 @@ from app.config import settings
 db = TinyDB(settings.database_path)
 
 # Representando uma "tabela" que armazena usuario
-user_table = db.Table("users")
+users_table = db.table("users")
 
 def find_user_by_email(email: str):
     # Retorna usuario por email ou None, se não existir
@@ -43,5 +43,3 @@ def normalize_cpf(cpf: str) -> str:
     # Remove caracteres não numericos do CPF
     # Exemplo : 123.456.789-00 -> 12345678900
     return "".join(char for char in cpf if char.isdigit())
-
-

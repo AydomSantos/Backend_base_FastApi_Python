@@ -32,9 +32,9 @@ class TokenResponse(BaseModel):
 
 # model para emitir feadback visual 
 
-class MensageResponse(BaseModel):
+class MessageResponse(BaseModel):
     #Resposta Simples de Mensagem
-    mensagem: str
+    message: str
 
 class ForgotPasswordResponse(BaseModel):
     """
@@ -48,10 +48,3 @@ class HomeResponse(BaseModel):
     # Resposta para a rota inicial ou de boas-vindas
     mensagem: str
     usuario: str | None = None
-
-
-
-
-
-
-

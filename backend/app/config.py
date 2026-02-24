@@ -10,7 +10,7 @@ from pydantic import BaseModel
 BACK_ROOT = Path(__file__).resolve().parents[1]
 
 class Settings(BaseModel):
-    secret_key = str = "CHANGE_ME_SUPER_KEY_FOR_CLASSROOM"
+    secret_key: str = "CHANGE_ME_SUPER_KEY_FOR_CLASSROOM"
 
     # Algoritimo de assinatura do token
     algorithm : str = "HS256"
@@ -24,8 +24,3 @@ class Settings(BaseModel):
     debug_password_reset_token : bool = True
 
 settings = Settings()
-
-
-
-
-
